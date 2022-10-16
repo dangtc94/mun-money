@@ -5,13 +5,21 @@ sudo apt upgrade -y
 sudo apt install ufw build-essential jq -y
 
 sleep 1
-wget -q -O - https://raw.githubusercontent.com/canha/golang-tools-install-script/master/goinstall.sh | bash -s -- --version 1.18
+
+if [[ $(which docker) && $(docker version) ]]; then
+    echo "Go installed!"
+    # command
+  else
+    echo "Installing Go..."
+    wget -q -O - https://raw.githubusercontent.com/canha/golang-tools-install-script/master/goinstall.sh | bash -s -- --version 1.18
+fi
+
 sleep 1
 source ~/.profile
 
 sleep 1
 ufw allow ssh && ufw allow 26657 && ufw allow 34657
-ufw enable
+ufw --force enable
 
 sleep 1
 git clone https://github.com/munblockchain/mun
