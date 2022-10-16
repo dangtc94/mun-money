@@ -50,17 +50,6 @@ mund init $monkier_mun --chain-id testmun
 sleep 1
 mund keys add dw --keyring-backend test
 
-# - name: dw
-#   type: local
-#   address: mun1tl8lae0899w5u4ay99a6ke87qqx0xkat790sln
-#   pubkey: '{"@type":"/cosmos.crypto.secp256k1.PubKey","key":"Awn6YC19tm6hWuRyGbDUGlL3ESQc2X3sxsHz148q+RU8"}'
-#   mnemonic: ""
-
-
-# **Important** write this mnemonic phrase in a safe place.
-# It is the only way to recover your account if you ever forget your password.
-
-# royal impact join glad company patch service choose sting enroll ribbon junk fragile lamp edit upper crumble timber parent surround squeeze banana penalty resist
 
 
 sleep 1
