@@ -124,6 +124,6 @@ sudo systemctl start mund
 #sudo systemctl restart mund
 
 sleep 1
-mund status
+mund status | jq
 
 # journalctl -fu mund.service
