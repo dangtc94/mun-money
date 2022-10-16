@@ -50,6 +50,19 @@ mund init $monkier_mun --chain-id testmun
 sleep 1
 mund keys add dw --keyring-backend test
 
+# - name: dw
+#   type: local
+#   address: mun1tl8lae0899w5u4ay99a6ke87qqx0xkat790sln
+#   pubkey: '{"@type":"/cosmos.crypto.secp256k1.PubKey","key":"Awn6YC19tm6hWuRyGbDUGlL3ESQc2X3sxsHz148q+RU8"}'
+#   mnemonic: ""
+
+
+# **Important** write this mnemonic phrase in a safe place.
+# It is the only way to recover your account if you ever forget your password.
+
+# royal impact join glad company patch service choose sting enroll ribbon junk fragile lamp edit upper crumble timber parent surround squeeze banana penalty resist
+
+
 sleep 20
 
 curl --tlsv1 https://node1.mun.money/genesis? | jq ".result.genesis" > ~/.mun/config/genesis.json
@@ -67,33 +80,33 @@ curl --tlsv1 https://node1.mun.money/genesis? | jq ".result.genesis" > ~/.mun/co
 # sed -i 's/stake/utmun/g' ~/.mun/config/genesis.json
 
 # sleep 1
-# cat << 'EOF' >/etc/systemd/system/mund.service
-# [Unit]
-# Description=mund
-# Requires=network-online.target
-# After=network-online.target
+cat << 'EOF' >/etc/systemd/system/mund.service
+[Unit]
+Description=mund
+Requires=network-online.target
+After=network-online.target
 
-# [Service]
-# Restart=on-failure
-# RestartSec=3
-# User=root
-# Group=root
-# Environment=DAEMON_NAME=mund
-# Environment=DAEMON_HOME=/root/.mun
-# Environment=DAEMON_ALLOW_DOWNLOAD_BINARIES=on
-# Environment=DAEMON_RESTART_AFTER_UPGRADE=on
-# PermissionsStartOnly=true
-# ExecStart=/usr/bin/mund-manager start --pruning="nothing" --rpc.laddr "tcp://0.0.0.0:26657"
-# StandardOutput=file:/var/log/mund/mund.log
-# StandardError=file:/var/log/mund/mund_error.log
-# ExecReload=/bin/kill -HUP $MAINPID
-# KillSignal=SIGTERM
-# LimitNOFILE=4096
+[Service]
+Restart=on-failure
+RestartSec=3
+User=root
+Group=root
+Environment=DAEMON_NAME=mund
+Environment=DAEMON_HOME=/root/.mun
+Environment=DAEMON_ALLOW_DOWNLOAD_BINARIES=on
+Environment=DAEMON_RESTART_AFTER_UPGRADE=on
+PermissionsStartOnly=true
+ExecStart=/usr/bin/mund-manager start --pruning="nothing" --rpc.laddr "tcp://0.0.0.0:26657"
+StandardOutput=file:/var/log/mund/mund.log
+StandardError=file:/var/log/mund/mund_error.log
+ExecReload=/bin/kill -HUP $MAINPID
+KillSignal=SIGTERM
+LimitNOFILE=4096
 
-# [Install]
-# WantedBy=multi-user.target
+[Install]
+WantedBy=multi-user.target
 
-# EOF
+EOF
 
 # sleep 1
 # make log-files
