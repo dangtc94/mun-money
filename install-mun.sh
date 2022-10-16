@@ -15,7 +15,7 @@ if [[ $(which go) && $(go version) ]]; then
 fi
 
 sleep 1
-source ~/.profile
+source /root/.bashrc
 
 sleep 1
 ufw allow ssh && ufw allow 26657 && ufw allow 34657
