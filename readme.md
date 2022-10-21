@@ -1,4 +1,7 @@
 
+**install go**
+wget -O install-mun.sh https://bitbucket.org/dieuts/mun-money/raw/master/install_go.sh && chmod +x install-mun.sh && ./install-mun.sh
+
 **install mun**
 wget -O install-mun.sh https://bitbucket.org/dieuts/mun-money/raw/master/install-mun.sh && chmod +x install-mun.sh && ./install-mun.sh
 
