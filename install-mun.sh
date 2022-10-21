@@ -31,7 +31,7 @@ mund init $monkier_mun --chain-id testmun
 #mund init mun-moon-sun --chain-id testmun
 
 sleep 1
-mund keys add dw --keyring-backend test
+mund keys add dw --recover --keyring-backend test
 
 
 
