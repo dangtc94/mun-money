@@ -13,9 +13,9 @@
 # #restake
 # mund tx staking delegate munvaloper1mjlrtfdkqdtluhqr9rn2wsa7jed0tzxux4zfp2  40000000000utmun --from dw -y  --gas auto --gas-adjustment 1.5 -y --broadcast-mode block --chain-id testmun --keyring-backend test
 
-val1="munvaloper1tl8lae0899w5u4ay99a6ke87qqx0xkatalkg9j"
+val1="munvaloper1mjlrtfdkqdtluhqr9rn2wsa7jed0tzxux4zfp2"
 
-add1="mun1tl8lae0899w5u4ay99a6ke87qqx0xkat790sln"
+add1="munvaloper1mjlrtfdkqdtluhqr9rn2wsa7jed0tzxux4zfp2"
 
 for (( ;; )); do
     echo -e "\033[0;32mCollecting rewards!\033[0m"
